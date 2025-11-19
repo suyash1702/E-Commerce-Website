@@ -191,8 +191,3 @@ Specify your license here (e.g., MIT, Apache 2.0, etc.)
 * Styling done via **Tailwind CSS**
 
 ---
-
-If you like, I can **auto-generate a polished README.md** tailored to *all the features your repo currently has* (by reading the structure). Do you want me to do that?
-
-[1]: https://supabase.com/docs/guides/getting-started/tutorials/with-react?utm_source=chatgpt.com "Build a User Management App with React | Supabase Docs"
-[2]: https://supabase.com/docs/guides/getting-started/quickstarts/reactjs?utm_source=chatgpt.com "Use Supabase with React | Supabase Docs"
