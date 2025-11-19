@@ -1,73 +1,198 @@
-# Welcome to your Lovable project
+# Trend Focus – E-Commerce Website
 
-## Project info
+**Trend Focus** is a modern, full-stack e-commerce web application built with React, Vite, Supabase, TypeScript, and Tailwind CSS. It provides a scalable, performant shopping platform.
 
-**URL**: https://lovable.dev/projects/24bdd07d-4b43-42f2-aa94-21e91076d86f
+## 🔗 Live Demo  
+[E-Commerce Website (Trend Focus)](https://e-commerce-website-02w5.onrender.com)  
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚀 Features
 
-**Use Lovable**
+- User authentication (signup, login) via **Supabase Auth**  
+- Product catalog with list & detail views  
+- Search functionality  
+- Shopping cart for users  
+- Order placement and management  
+- Inventory management (backed via Supabase database)  
+- Responsive UI (desktop + mobile)  
+- Clean component design using **shadcn-ui**  
+- Styling with **Tailwind CSS**  
+- State management and API interaction via Supabase client  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/24bdd07d-4b43-42f2-aa94-21e91076d86f) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🧰 Tech Stack
 
-**Use your preferred IDE**
+| Layer | Technology |
+|---|---|
+| **Frontend** | React + Vite + TypeScript |
+| **UI / Styling** | Tailwind CSS, shadcn-ui |
+| **Backend / Database** | Supabase (PostgreSQL) |
+| **Auth** | Supabase Auth |
+| **Deployment** | (Your deployment platform / provider) |
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Repository Structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
 ```
 
-**Edit a file directly in GitHub**
+E-Commerce-Website/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── supabase/
+│   └── …
+├── .gitignore
+├── package.json
+├── tsconfig.json
+├── vite.config.ts
+├── tailwind.config.ts
+└── …
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+````
 
-**Use GitHub Codespaces**
+- `src/supabase/` — Contains Supabase client configuration and helpers  
+- `src/components/` — Reusable UI components  
+- `src/pages/` — Application’s page-level components / routes  
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+## 🛠️ Getting Started (Local Development)
 
-This project is built with:
+### Prerequisites
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Node.js (v16+ recommended)  
+- Yarn or npm  
+- A Supabase project (for authentication, database, and storage)  
 
-## How can I deploy this project?
+### Setup
 
-Simply open [Lovable](https://lovable.dev/projects/24bdd07d-4b43-42f2-aa94-21e91076d86f) and click on Share -> Publish.
+1. **Clone the repository**  
+   ```bash
+   git clone https://github.com/suyash1702/E-Commerce-Website.git
+   cd E-Commerce-Website
+````
 
-## Can I connect a custom domain to my Lovable project?
+2. **Install dependencies**
 
-Yes, you can!
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+3. **Set up environment variables**
+   Rename or create a `.env` or `.env.local` file in the project root, and add:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+   ```env
+   VITE_SUPABASE_URL=your_supabase_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   # Add other envs you need (storage, etc.)
+   ```
+
+4. **Set up Supabase database**
+
+   * Use the SQL files in the root (like `SETUP_DATABASE.sql`, `FIX_RLS_POLICIES_COMPLETE.sql`) to create your schema and set permissions.
+   * Make sure your Supabase RLS (Row-Level Security) policies are correctly configured as per the SQL scripts.
+   * See Supabase docs for how to run SQL in the dashboard. ([Supabase][1])
+
+5. **Run the development server**
+
+   ```bash
+   npm run dev
+   ```
+
+6. **Build for production**
+
+   ```bash
+   npm run build
+   ```
+
+---
+
+## ✅ Deployment
+
+To deploy this app for production:
+
+1. Build the app using `npm run build`.
+2. Serve the built files using a static host (Netlify, Vercel, or any static file host).
+3. Ensure your environment variables (Supabase URL, anon key) are set in your hosting environment.
+
+---
+
+## 💡 Usage
+
+* **Sign up / Login** — Create or use an existing account to access user features
+* **Browse Products** — View available products, view details
+* **Search** — Use the search bar to find products
+* **Cart** — Add or remove items, view total
+* **Checkout** — Place orders (or simulate order placement)
+* **Manage Inventory** — *(For admin or dev)* Use SQL scripts + Supabase dashboard to add / update products
+
+---
+
+## 🧪 Testing & Environment
+
+* *(If you have tests)*: Run your test suite via:
+
+  ```bash
+  npm test
+  ```
+
+* *(Optional)*: Use Supabase’s **Row-Level Security (RLS)** for granular data access control.
+
+---
+
+## 👥 Contributing
+
+Contributions are very welcome! If you'd like to contribute:
+
+1. Fork the repo
+2. Create a new branch (`git checkout -b feature/X`)
+3. Make your changes & commit (`git commit -m "Add feature X"`)
+4. Push (`git push origin feature/X`)
+5. Open a Pull Request
+
+Please follow best practices: write clean code, test features, and update documentation.
+
+---
+
+## 📚 Resources & References
+
+* [Supabase React Quickstart](https://supabase.com/docs/guides/getting-started/quickstarts/reactjs) ([Supabase][2])
+* [Supabase + React Auth Tutorial](https://supabase.com/docs/guides/getting-started/tutorials/with-react) ([Supabase][1])
+
+---
+
+## ⚠️ Known Issues / To-Do
+
+* [ ] Payment integration (Stripe / PayPal)
+* [ ] Order history page (if not implemented)
+* [ ] Admin dashboard for managing users / orders
+* [ ] Image upload for products using Supabase Storage
+* [ ] Better error handling & UI feedback
+
+---
+
+## 📄 License
+
+Specify your license here (e.g., MIT, Apache 2.0, etc.)
+
+---
+
+## 🙏 Acknowledgments
+
+* Built using **React + Vite**
+* UI components from **shadcn-ui**
+* Powered by **Supabase** (Auth + Database)
+* Styling done via **Tailwind CSS**
+
+---
+
+If you like, I can **auto-generate a polished README.md** tailored to *all the features your repo currently has* (by reading the structure). Do you want me to do that?
+
+[1]: https://supabase.com/docs/guides/getting-started/tutorials/with-react?utm_source=chatgpt.com "Build a User Management App with React | Supabase Docs"
+[2]: https://supabase.com/docs/guides/getting-started/quickstarts/reactjs?utm_source=chatgpt.com "Use Supabase with React | Supabase Docs"
